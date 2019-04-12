@@ -9,7 +9,8 @@ This project uses:
 - **jest** - unit testing framework.
 - **dotenv** - a module for storing and setting environment variables.
 - **faker** - a module to generate massive amounts of fake data. 
-##SETUP
+
+## SETUP
 
 ##### LOCAL MACHINE:
 
