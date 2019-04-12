@@ -18,7 +18,7 @@ functions:
   - '${file(src/handlers/members/members.serverless.yml)}'
 
 plugins:
-  - serverless-offline
+   - serverless-offline
 
 custom:
   serverless-offline:
