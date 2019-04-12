@@ -14,9 +14,9 @@ This project uses:
 ##### LOCAL MACHINE:
 
 ##### Requirements: 
-- Node.js, 8.10.x
-- Java Runtime Engine (JRE) version 6.x or newer
-- Serverless framework `npm install -g serverless`
+- **Node.js, 8.10.x**
+- **Java Runtime Engine (JRE)** version 6.x or newer
+- **Serverless framework** `npm install -g serverless`
 
 1. **Create .env file** in the root of the project. This file is used for storing environment variables.
 ```
@@ -31,3 +31,15 @@ AWS_SECRET_ACCESS_KEY=''
 5. `npm run seed` - (optional) populate fake data to DynamoDB
 6. `npm run test && npm run test:coverage` - (optional) run tests.
 6. `npm start` - you will see a list of routes, you can start testing them using tools like Postman.
+
+##### DEPLOY TO AWS:
+
+1. **Setup your AWS profile** using [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+**or** 
+**export AWS credentials** in your shell shell:
+```
+export AWS_ACCESS_KEY_ID="your_aws_access_id" 
+export AWS_SECRET_ACCESS_KEY="your_aws_access_key"
+```
+2. `npm install`
+3. `npm run deploy`
