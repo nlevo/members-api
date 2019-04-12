@@ -1,0 +1,40 @@
+service: member-profile-api
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:GetItem"
+      - "dynamodb:PutItem"
+      - "dynamodb:UpdateItem"
+      - "dynamodb:DeleteItem"
+
+functions:
+  - '${file(src/handlers/members/members.serverless.yml)}'
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+
+resources:
+  Resources:
+    usersTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: members
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

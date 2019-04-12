@@ -1,0 +1,14 @@
+# package directories
+node_modules/
+
+# Serverless directories
+.serverless/
+.dynamodb
+
+# files
+.DS_Store
+.vscode
+.env
+
+# tests
+coverage/
